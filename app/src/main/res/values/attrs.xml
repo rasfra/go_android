@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="GoBoardView">
+        <attr name="playHandler" format="reference"/>
+    </declare-styleable>
+</resources>

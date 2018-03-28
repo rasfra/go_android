@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Go</string>
+    <string name="game_turn">%s\'s turn</string>
+    <string name="game_black_prisoners">Black has %s</string>
+    <string name="game_white_prisoners">White has %s</string>
+    <string name="btn_pass">Pass</string>
+    <plurals name="prisoner">
+        <item quantity="one">%d prisoner</item>
+        <item quantity="other">%d prisoners</item>
+    </plurals>
+</resources>
