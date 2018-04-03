@@ -58,7 +58,7 @@ class GoBoardView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        val result = detector.onTouchEvent(event)
+        detector.onTouchEvent(event)
         return super.onTouchEvent(event)
     }
 
@@ -131,7 +131,7 @@ class GoBoardView(context: Context?, attrs: AttributeSet?) : View(context, attrs
             val black = Paint()
             black.color = Color.BLACK;
 
-            plays.forEachIndexed {yPos, col -> col.forEachIndexed{ xPos, row ->
+            plays.forEachIndexed {yPos, col -> col.forEachIndexed{ xPos, _ ->
                 val(x, y) = toCoords(Position(xPos, yPos))
                 val player = plays[yPos][xPos]
 

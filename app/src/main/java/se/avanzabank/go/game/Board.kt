@@ -10,7 +10,7 @@ class Board(val size: Int) {
         println("creating board with size $size")
     }
 
-    fun isEmpty(pos: Position): Boolean{
+    fun isEmpty(pos: Position): Boolean {
         return getPlay(pos) == Player.NONE
     }
 
@@ -24,7 +24,7 @@ class Board(val size: Int) {
         boardState[pos.y][pos.x] = state
     }
 
-    fun getConnectedGroups(pos: Position): Set<Group>{
+    fun getConnectedGroups(pos: Position): Set<Group> {
         return surroundingPositions(pos).map { getGroup(it) }.toSet()
     }
 
@@ -69,7 +69,7 @@ class Board(val size: Int) {
         return Group(targetColor, result)
     }
 
-    fun getLiberties(group: Group): Set<Position>{
+    fun getLiberties(group: Group): Set<Position> {
         return group.positions.flatMap { surroundingPositions(it) }.toSet()
                 .filter { getPlayerAt(it) == Player.NONE }.toSet()
     }
@@ -84,6 +84,8 @@ class Board(val size: Int) {
     fun rightOf(pos: Position): Position? = if (pos.x < size - 1) Position(pos.x + 1, pos.y) else null
 
     private fun emptyBoard(): Array<Array<Player>> =
-            Array(size, { y -> Array(size, { x -> Player.NONE }) })
+            Array(size, {
+                Array(size, { Player.NONE })
+            })
 
 }
